@@ -1,0 +1,14 @@
+[project]
+name = "agilly1989_motorway"
+description = "This my implemenation of a `pipe` in ComfyUI. Is it better or worse than others? No idea."
+version = "1.0.0"
+license = {file = "LICENSE"}
+
+[project.urls]
+Repository = "https://github.com/agilly1989/ComfyUI_agilly1989_motorway"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "agilly1989"
+DisplayName = "ComfyUI_agilly1989_motorway"
+Icon = ""
