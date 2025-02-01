@@ -1,4 +1,5 @@
 from enum import Enum
+import hashlib
 
 class CustomIO(str,Enum):
     MOTORWAY = "MOTORWAY"
@@ -20,8 +21,12 @@ class MotorwayClass:
     def __init__(self):
         pass
 
-    def update(self,varName,varData):
-        setattr(self,varName,varData)
+    def varNameToHash(self,varName:str):
+        varNameHash = hashlib.sha256(varName.encode()).hexdigest()
+        return f"hash_{varNameHash}"
 
-    def get(self,varName):
-        return getattr(self,varName)
+    def update(self,varName:str,varData):
+        setattr(self,self.varNameToHash(varName),varData)
+
+    def get(self,varName:str):
+        return getattr(self,self.varNameToHash(varName))

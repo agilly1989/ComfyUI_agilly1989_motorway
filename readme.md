@@ -45,3 +45,4 @@ If you go looking in `ramps/generated.py` you will see `MAX_IN` and `MAX_OUT`.. 
 # Things I need to do
 * [ ] Tidy up
 * [ ] Rename stuff maybe?
+* [ ] Properly name nodes (haven't gotten around to it yet)
