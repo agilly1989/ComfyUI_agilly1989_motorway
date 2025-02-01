@@ -1,5 +1,9 @@
+# What is this?
+
+This my implemenation of a "pipe" in ComfyUI. Is it better or worse than others? No idea.
+
 # Installation
-Open your ComfyUI/custom_nodes folder and git clone this repository
+Open your `ComfyUI/custom_nodes` folder and git clone this repository
 
 # Usage
 The node pattern is `Motorway [amount of inputs]x[amount of outputs]` so
@@ -17,6 +21,19 @@ The motorway is *literally* just a dict that gets passed on from node to node, s
 # Why Did I make this?
 I didn't like how other "pipe" implementations were implemented.
 
+# Compatibility
+
+As far as I know, it should be compatible with all nodes, but if something breaks, tell me or "just don't use it"
+
+# Will it break
+
+Maybe, but "It works on my System"
+
+# I want more inputs / outputs
+
+If you go looking in `ramps/generated.py` you will see `MAX_IN` and `MAX_OUT`.. Enter whatever number you want (up to __52__)
+
 # Feature Creep
-* [ ] Motorway Merge
+* [ ] Motorway Merge (will probably be a "update A with B" thing because of `dicts`)
 * [ ] Make it so it loads last and makes a clone of existing nodes so you don't need to add "Motorway" nodes
+  * Will probably need patching of the node loading system to ensure that this loads last in the sequence, mega jank but will do the job
