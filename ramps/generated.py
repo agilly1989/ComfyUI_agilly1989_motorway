@@ -4,8 +4,8 @@ import string
 from ..custom_types import CustomIO
 from comfy.comfy_types import IO
 
-MAX_IN = 5
-MAX_OUT = 5
+MAX_IN = 10
+MAX_OUT = 10
 
 # Helper function to get character labels
 def get_char(idx):
@@ -69,6 +69,7 @@ def create_motorway_nodes():
                 "INPUT_TYPES": generate_inputs(in_count, out_count),
                 "RETURN_TYPES": return_types,
                 "RETURN_NAMES": return_names,
+                "IGNORE_MOTORWAY": True,
                 "FUNCTION": "function",
                 "CATEGORY": f"agilly1989 Nodes/Inputs {in_count}",
                 "NODE_NAME": node_name,
