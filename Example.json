@@ -1,0 +1,914 @@
+{
+  "last_node_id": 457,
+  "last_link_id": 739,
+  "nodes": [
+    {
+      "id": 443,
+      "type": "MotorwayStart",
+      "pos": [
+        2460,
+        1140
+      ],
+      "size": [
+        210,
+        26
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MOTORWAY",
+          "type": "MOTORWAY",
+          "links": [
+            714
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MotorwayStart"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 445,
+      "type": "EmptyLatentImage",
+      "pos": [
+        2370,
+        1370
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            718
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ]
+    },
+    {
+      "id": 451,
+      "type": "KSampler",
+      "pos": [
+        4670,
+        1280
+      ],
+      "size": [
+        315,
+        262
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 726
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 727
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 728
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 729
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            731
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        924829501288989,
+        "randomize",
+        20,
+        8,
+        "euler",
+        "normal",
+        1
+      ]
+    },
+    {
+      "id": 446,
+      "type": "Motorway 0x1",
+      "pos": [
+        3200,
+        1200
+      ],
+      "size": [
+        315,
+        78
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "MOTORWAY",
+          "type": "MOTORWAY",
+          "link": 719
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MOTORWAY",
+          "type": "MOTORWAY",
+          "links": [
+            720
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "ANY (A)",
+          "type": "*",
+          "links": [
+            721,
+            723
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Motorway 0x1"
+      },
+      "widgets_values": [
+        "clip"
+      ]
+    },
+    {
+      "id": 453,
+      "type": "Motorway 1x2",
+      "pos": [
+        5040,
+        1200
+      ],
+      "size": [
+        315,
+        122
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "MOTORWAY",
+          "type": "MOTORWAY",
+          "link": 732
+        },
+        {
+          "name": "ANY_(A)",
+          "type": "*",
+          "link": 731,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MOTORWAY",
+          "type": "MOTORWAY",
+          "links": [
+            736
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "ANY (A)",
+          "type": "*",
+          "links": [
+            733
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "ANY (B)",
+          "type": "*",
+          "links": [
+            734
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Motorway 1x2"
+      },
+      "widgets_values": [
+        "samples",
+        "vae"
+      ]
+    },
+    {
+      "id": 456,
+      "type": "Motorway 1x0",
+      "pos": [
+        5650,
+        1200
+      ],
+      "size": [
+        315,
+        78
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "MOTORWAY",
+          "type": "MOTORWAY",
+          "link": 736
+        },
+        {
+          "name": "ANY_(A)",
+          "type": "*",
+          "link": 737,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MOTORWAY",
+          "type": "MOTORWAY",
+          "links": [
+            738
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Motorway 1x0"
+      },
+      "widgets_values": [
+        "image"
+      ]
+    },
+    {
+      "id": 454,
+      "type": "VAEDecode",
+      "pos": [
+        5400,
+        1300
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 733
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 734
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            737
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 444,
+      "type": "Motorway 4x0",
+      "pos": [
+        2790,
+        1200
+      ],
+      "size": [
+        315,
+        210
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "MOTORWAY",
+          "type": "MOTORWAY",
+          "link": 714
+        },
+        {
+          "name": "ANY_(A)",
+          "type": "*",
+          "link": 715,
+          "shape": 7
+        },
+        {
+          "name": "ANY_(B)",
+          "type": "*",
+          "link": 716,
+          "shape": 7
+        },
+        {
+          "name": "ANY_(C)",
+          "type": "*",
+          "link": 717,
+          "shape": 7
+        },
+        {
+          "name": "ANY_(D)",
+          "type": "*",
+          "link": 718,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MOTORWAY",
+          "type": "MOTORWAY",
+          "links": [
+            719
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Motorway 4x0"
+      },
+      "widgets_values": [
+        "model",
+        "clip",
+        "vae",
+        "latent"
+      ]
+    },
+    {
+      "id": 455,
+      "type": "PreviewImage",
+      "pos": [
+        6390,
+        1260
+      ],
+      "size": [
+        210,
+        246
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 739
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 442,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        2360,
+        1220
+      ],
+      "size": [
+        315,
+        98
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            715
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            716
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            717
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "mobius_v10.safetensors"
+      ]
+    },
+    {
+      "id": 448,
+      "type": "CLIPTextEncode",
+      "pos": [
+        3570,
+        1300
+      ],
+      "size": [
+        210,
+        76
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 721
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            722
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "positive prompt"
+      ]
+    },
+    {
+      "id": 449,
+      "type": "CLIPTextEncode",
+      "pos": [
+        3570,
+        1410
+      ],
+      "size": [
+        210,
+        76
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 723
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            724
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "negative prompt"
+      ]
+    },
+    {
+      "id": 447,
+      "type": "Motorway 2x0",
+      "pos": [
+        3880,
+        1200
+      ],
+      "size": [
+        315,
+        122
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "MOTORWAY",
+          "type": "MOTORWAY",
+          "link": 720
+        },
+        {
+          "name": "ANY_(A)",
+          "type": "*",
+          "link": 722,
+          "shape": 7
+        },
+        {
+          "name": "ANY_(B)",
+          "type": "*",
+          "link": 724,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MOTORWAY",
+          "type": "MOTORWAY",
+          "links": [
+            725
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Motorway 2x0"
+      },
+      "widgets_values": [
+        "positive",
+        "negative"
+      ]
+    },
+    {
+      "id": 450,
+      "type": "Motorway 0x4",
+      "pos": [
+        4290,
+        1200
+      ],
+      "size": [
+        315,
+        210
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "MOTORWAY",
+          "type": "MOTORWAY",
+          "link": 725
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MOTORWAY",
+          "type": "MOTORWAY",
+          "links": [
+            732
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "ANY (A)",
+          "type": "*",
+          "links": [
+            726
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "ANY (B)",
+          "type": "*",
+          "links": [
+            727
+          ],
+          "slot_index": 2
+        },
+        {
+          "name": "ANY (C)",
+          "type": "*",
+          "links": [
+            728
+          ],
+          "slot_index": 3
+        },
+        {
+          "name": "ANY (D)",
+          "type": "*",
+          "links": [
+            729
+          ],
+          "slot_index": 4
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Motorway 0x4"
+      },
+      "widgets_values": [
+        "model",
+        "positive",
+        "negative",
+        "latent"
+      ]
+    },
+    {
+      "id": 457,
+      "type": "Motorway 0x1",
+      "pos": [
+        6010,
+        1200
+      ],
+      "size": [
+        315,
+        78
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "MOTORWAY",
+          "type": "MOTORWAY",
+          "link": 738
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MOTORWAY",
+          "type": "MOTORWAY",
+          "links": null
+        },
+        {
+          "name": "ANY (A)",
+          "type": "*",
+          "links": [
+            739
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Motorway 0x1"
+      },
+      "widgets_values": [
+        "image"
+      ]
+    }
+  ],
+  "links": [
+    [
+      714,
+      443,
+      0,
+      444,
+      0,
+      "MOTORWAY"
+    ],
+    [
+      715,
+      442,
+      0,
+      444,
+      1,
+      "*"
+    ],
+    [
+      716,
+      442,
+      1,
+      444,
+      2,
+      "*"
+    ],
+    [
+      717,
+      442,
+      2,
+      444,
+      3,
+      "*"
+    ],
+    [
+      718,
+      445,
+      0,
+      444,
+      4,
+      "*"
+    ],
+    [
+      719,
+      444,
+      0,
+      446,
+      0,
+      "MOTORWAY"
+    ],
+    [
+      720,
+      446,
+      0,
+      447,
+      0,
+      "MOTORWAY"
+    ],
+    [
+      721,
+      446,
+      1,
+      448,
+      0,
+      "CLIP"
+    ],
+    [
+      722,
+      448,
+      0,
+      447,
+      1,
+      "*"
+    ],
+    [
+      723,
+      446,
+      1,
+      449,
+      0,
+      "CLIP"
+    ],
+    [
+      724,
+      449,
+      0,
+      447,
+      2,
+      "*"
+    ],
+    [
+      725,
+      447,
+      0,
+      450,
+      0,
+      "MOTORWAY"
+    ],
+    [
+      726,
+      450,
+      1,
+      451,
+      0,
+      "MODEL"
+    ],
+    [
+      727,
+      450,
+      2,
+      451,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      728,
+      450,
+      3,
+      451,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      729,
+      450,
+      4,
+      451,
+      3,
+      "LATENT"
+    ],
+    [
+      731,
+      451,
+      0,
+      453,
+      1,
+      "*"
+    ],
+    [
+      732,
+      450,
+      0,
+      453,
+      0,
+      "MOTORWAY"
+    ],
+    [
+      733,
+      453,
+      1,
+      454,
+      0,
+      "LATENT"
+    ],
+    [
+      734,
+      453,
+      2,
+      454,
+      1,
+      "VAE"
+    ],
+    [
+      736,
+      453,
+      0,
+      456,
+      0,
+      "MOTORWAY"
+    ],
+    [
+      737,
+      454,
+      0,
+      456,
+      1,
+      "*"
+    ],
+    [
+      738,
+      456,
+      0,
+      457,
+      0,
+      "MOTORWAY"
+    ],
+    [
+      739,
+      457,
+      1,
+      455,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7400249944258713,
+      "offset": [
+        -2294.9474305915237,
+        -932.1047827393355
+      ]
+    },
+    "node_versions": {
+      "comfy-core": "0.3.12"
+    },
+    "groupNodes": {}
+  },
+  "version": 0.4
+}

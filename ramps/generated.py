@@ -57,6 +57,8 @@ NODE_CLASS_MAPPINGS = {}
 # Generate all possible Motorway nodes
 def create_motorway_nodes():
     for in_count, out_count in itertools.product(range(MAX_IN + 1), range(MAX_OUT + 1)):
+        if in_count == 0 and out_count == 0:
+            continue
         return_types, return_names = generate_outputs(out_count)
         node_name = f"Motorway {in_count}x{out_count}"
         
