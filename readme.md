@@ -8,7 +8,8 @@ Open your `ComfyUI/custom_nodes` folder and git clone this repository
 # Usage
 The node pattern is `Motorway [amount of inputs]x[amount of outputs]` so
 * 1x5 would be 1 input and 5 outputs
-* 0x3 would be 0 inputs and 5 outputs
+* 0x3 would be 0 inputs and 3 outputs
+* 420x69 would be 420 inputs and 69 outputs (not possible with current node code but you get the idea)
 * etc
 
 Type in a key to identify what that input is and use it later down the "Motorway", Load the `Example.json` into ComfyUI to see what I mean.
