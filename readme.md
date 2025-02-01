@@ -7,6 +7,8 @@ This my implemenation of a "pipe" in ComfyUI. Is it better or worse than others?
 # Installation
 Open your `ComfyUI/custom_nodes` folder and git clone this repository
 
+You can now also find it in ComfyUI Manager
+
 # Usage
 The node pattern is `Motorway [amount of inputs]x[amount of outputs]` so
 * 1x5 would be 1 input and 5 outputs
@@ -46,3 +48,10 @@ If you go looking in `ramps/generated.py` you will see `MAX_IN` and `MAX_OUT`.. 
 * [ ] Tidy up
 * [ ] Rename stuff maybe?
 * [ ] Properly name nodes (haven't gotten around to it yet)
+
+# Errors
+If you see an error about `'MotorwayClass' object has no attribute 'hash_` that is because that key (as a sha256 hash) doesn't exist in the Motorway. Double check your key values.
+
+# Help me please!
+
+You can find me in the [Comfy Org discord](https://discord.com/invite/comfyorg) as `@agilly1989` or feel free to open an issue above. Do not DM me on Discord, you will be ignored.
