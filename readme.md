@@ -1,5 +1,7 @@
 # What is this?
 
+CURRENTLY IN ACTIVE DEVELOPMENT (BETA)! IF THINGS BREAK ITS BECAUSE I BROKE IT.
+
 This my implemenation of a "pipe" in ComfyUI. Is it better or worse than others? No idea.
 
 # Installation
@@ -17,7 +19,7 @@ Type in a key to identify what that input is and use it later down the "Motorway
 You must start with the "MotorwayStart" node
 
 # Behind the Scenes
-The motorway is *literally* just a dict that gets passed on from node to node, so if you use an existing key later down the "Motorway" it will be overwritten
+The motorway is ~~*literally* just a dict~~ now a custom class that gets passed on from node to node, so if you use an existing key later down the "Motorway" it will be overwritten
 
 # Why Did I make this?
 I didn't like how other "pipe" implementations were implemented.
@@ -35,6 +37,11 @@ Maybe, but "It works on my System"
 If you go looking in `ramps/generated.py` you will see `MAX_IN` and `MAX_OUT`.. Enter whatever number you want (up to __52__)
 
 # Feature Creep
+* [ ] Move configuration values to a config file (`yaml`, `toml`, `ini`, `xml`, something)
 * [ ] Motorway Merge (will probably be a "update A with B" thing because of `dicts`)
 * [ ] Make it so it loads last and makes a clone of existing nodes so you don't need to add "Motorway" nodes
   * Will probably need patching of the node loading system to ensure that this loads last in the sequence, mega jank but will do the job
+
+# Things I need to do
+* [ ] Tidy up
+* [ ] Rename stuff maybe?

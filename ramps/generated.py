@@ -1,7 +1,7 @@
 import itertools
 import string
 
-from ..custom_types import CustomIO
+from ..custom_types import CustomIO, MotorwayClass
 from comfy.comfy_types import IO
 
 MAX_IN = 10
@@ -31,7 +31,7 @@ def generate_inputs(in_count, out_count):
     })
 
 # Function logic for processing nodes
-def node_function(self, MOTORWAY: dict, **kwargs):
+def node_function(self, MOTORWAY: MotorwayClass, **kwargs):
     node_connections = [key for key in kwargs if "key" not in key]
     connection_keys = [key for key in kwargs if "key" in key]
 
@@ -39,14 +39,15 @@ def node_function(self, MOTORWAY: dict, **kwargs):
     for connection in node_connections:
         key_value = kwargs.get(f"{connection}_key")
         if key_value not in (None, ""):
-            MOTORWAY[key_value] = kwargs.get(connection)
+            #MOTORWAY[key_value] = kwargs.get(connection)
+            MOTORWAY.update(key_value,kwargs.get(connection))
 
     # Process outputs
     outputs = [MOTORWAY]
     for connection_key in connection_keys:
         key_value = kwargs.get(connection_key)
         if key_value not in (None, ""):
-            outputs.append(MOTORWAY.get(key_value, None))
+            outputs.append(MOTORWAY.get(key_value))
 
     return tuple(outputs)
 
@@ -71,7 +72,7 @@ def create_motorway_nodes():
                 "RETURN_NAMES": return_names,
                 "IGNORE_MOTORWAY": True,
                 "FUNCTION": "function",
-                "CATEGORY": f"agilly1989 Nodes/Inputs {in_count}",
+                "CATEGORY": f"agilly1989 Nodes/Motorways",
                 "NODE_NAME": node_name,
                 "function": node_function,
             }
@@ -89,7 +90,7 @@ class MotorwayStart:
     CATEGORY = "agilly1989 Nodes/Motorway Start"
     
     def function(self):
-        return ({},)
+        return (MotorwayClass(),)
 
 # Create and register nodes
 create_motorway_nodes()

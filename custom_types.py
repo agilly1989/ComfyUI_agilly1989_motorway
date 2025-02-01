@@ -14,3 +14,14 @@ class CustomIO(str,Enum):
         a = frozenset(self.split(","))
         b = frozenset(value.split(","))
         return not (b.issubset(a) or a.issubset(b))
+    
+
+class MotorwayClass:
+    def __init__(self):
+        pass
+
+    def update(self,varName,varData):
+        setattr(self,varName,varData)
+
+    def get(self,varName):
+        return getattr(self,varName)
