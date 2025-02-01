@@ -9,6 +9,6 @@ Repository = "https://github.com/agilly1989/ComfyUI_agilly1989_motorway"
 #  Used by Comfy Registry https://comfyregistry.org
 
 [tool.comfy]
-PublisherId = ""
+PublisherId = "agilly1989"
 DisplayName = "ComfyUI_agilly1989_motorway"
 Icon = ""
