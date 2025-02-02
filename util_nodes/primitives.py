@@ -12,7 +12,11 @@ class MotorwaySeed:
     FUNCTION = "function"
     CATEGORY = "agilly1989 Nodes/Utilities/Primitives/Numbers"
     
-    def function(self,MOTORWAY=None,seed:int=0,key:str="seed"):
+    def function(self,**kwargs):
+        MOTORWAY = kwargs.get(CustomIO.MOTORWAY.value,None)
+        key = kwargs.get("key",self.INPUT_TYPES()['optional']['key'][1]['default'])
+        seed = kwargs.get("seed",self.INPUT_TYPES()['required']['seed'][1]['default'])
+
         if MOTORWAY == None:
             MOTORWAY = MotorwayClass()
         MOTORWAY.update(key,seed)
@@ -30,7 +34,11 @@ class MotorwayInt:
     FUNCTION = "function"
     CATEGORY = "agilly1989 Nodes/Utilities/Primitives/Numbers"
     
-    def function(self,MOTORWAY=None,INT:int=0,key:str="integer"):
+    def function(self,**kwargs):
+        MOTORWAY = kwargs.get(CustomIO.MOTORWAY.value,None)
+        key = kwargs.get("key",self.INPUT_TYPES()['optional']['key'][1]['default'])
+        INT = kwargs.get("INT",self.INPUT_TYPES()['required']['INT'][1]['default'])
+
         if MOTORWAY == None:
             MOTORWAY = MotorwayClass()
         MOTORWAY.update(key,INT)
@@ -47,7 +55,11 @@ class MotorwayFloat:
     FUNCTION = "function"
     CATEGORY = "agilly1989 Nodes/Utilities/Primitives/Numbers"
     
-    def function(self,MOTORWAY=None,FLOAT:int=0,key:str="float"):
+    def function(self,**kwargs):
+        MOTORWAY = kwargs.get(CustomIO.MOTORWAY.value,None)
+        key = kwargs.get("key",self.INPUT_TYPES()['optional']['key'][1]['default'])
+        FLOAT = kwargs.get("FLOAT",self.INPUT_TYPES()['required']['FLOAT'][1]['default'])
+
         if MOTORWAY == None:
             MOTORWAY = MotorwayClass()
         MOTORWAY.update(key,FLOAT)
@@ -64,7 +76,11 @@ class MotorwayStr:
     FUNCTION = "function"
     CATEGORY = "agilly1989 Nodes/Utilities/Primitives/Strings"
 
-    def function(self,MOTORWAY=None,STRING:int=0,key:str="string"):
+    def function(self,**kwargs):
+        MOTORWAY = kwargs.get(CustomIO.MOTORWAY.value,None)
+        key = kwargs.get("key",self.INPUT_TYPES()['optional']['key'][1]['default'])
+        STRING = kwargs.get("STRING",self.INPUT_TYPES()['required']['STRING'][1]['default'])
+
         if MOTORWAY == None:
             MOTORWAY = MotorwayClass()
         MOTORWAY.update(key,STRING)
@@ -81,7 +97,11 @@ class MotorwayStrMulti:
     FUNCTION = "function"
     CATEGORY = "agilly1989 Nodes/Utilities/Primitives/Strings"
     
-    def function(self,MOTORWAY=None,STRING:int=0,key:str="string"):
+    def function(self,**kwargs):
+        MOTORWAY = kwargs.get(CustomIO.MOTORWAY.value,None)
+        key = kwargs.get("key",self.INPUT_TYPES()['optional']['key'][1]['default'])
+        STRING = kwargs.get("STRING",self.INPUT_TYPES()['required']['STRING'][1]['default'])
+
         if MOTORWAY == None:
             MOTORWAY = MotorwayClass()
         MOTORWAY.update(key,STRING)
