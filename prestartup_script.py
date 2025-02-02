@@ -1,6 +1,7 @@
 from unittest.mock import patch as unittestPatch
 import nodes
 import os
+from pathlib import Path
 
 # Backup original functions
 original_listdir = os.listdir
@@ -10,9 +11,8 @@ def patched_init_external_custom_nodes():
     """ Wrapper to patch os.listdir only inside init_external_custom_nodes. """
     def sorted_listdir(path):
         original_list = sorted(original_listdir(path))  # Sort all modules first
-        if "Comfyui_agilly_motorway" in original_list:
-            # Move "Comfyui_agilly_motorway" to the end of the list
-            original_list.append(original_list.pop(original_list.index("ComfyUI_agilly1989_motorway")))
+        if Path(__file__).parts[-2] in original_list:
+            original_list.append(original_list.pop(original_list.index(Path(__file__).parts[-2])))
         return original_list  
 
     with unittestPatch("os.listdir", new=sorted_listdir):
