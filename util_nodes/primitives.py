@@ -5,7 +5,7 @@ class MotorwaySeed:
     @classmethod
     def INPUT_TYPES(cls):
         return {"required": {"seed":(IO.INT,{"default":0,"min":0,"max":0xffffffffffffffff})},
-                "optional": {"MOTORWAY":(CustomIO.MOTORWAY,{"tooltip":"Optional Input. If not connected will act as a \"Motorway Start\" node"}),
+                "optional": {CustomIO.MOTORWAY.value:(CustomIO.MOTORWAY,{"tooltip":"Optional Input. If not connected will act as a \"Motorway Start\" node"}),
                              "key":(IO.STRING,{"default":"seed"})}}
     
     RETURN_TYPES = (CustomIO.MOTORWAY,IO.INT)
@@ -23,7 +23,7 @@ class MotorwayInt:
     @classmethod
     def INPUT_TYPES(cls):
         return {"required": {"INT":(IO.INT,{"default":0})},
-                "optional": {"MOTORWAY":(CustomIO.MOTORWAY,{"tooltip":"Optional Input. If not connected will act as a \"Motorway Start\" node"}),
+                "optional": {CustomIO.MOTORWAY.value:(CustomIO.MOTORWAY,{"tooltip":"Optional Input. If not connected will act as a \"Motorway Start\" node"}),
                              "key":(IO.STRING,{"default":"integer"})}}
     
     RETURN_TYPES = (CustomIO.MOTORWAY,IO.INT)
@@ -40,7 +40,7 @@ class MotorwayFloat:
     @classmethod
     def INPUT_TYPES(cls):
         return {"required": {"FLOAT":(IO.FLOAT,{"default":0,"step":0.001})},
-                "optional": {"MOTORWAY":(CustomIO.MOTORWAY,{"tooltip":"Optional Input. If not connected will act as a \"Motorway Start\" node"}),
+                "optional": {CustomIO.MOTORWAY.value:(CustomIO.MOTORWAY,{"tooltip":"Optional Input. If not connected will act as a \"Motorway Start\" node"}),
                              "key":(IO.STRING,{"default":"float"})}}
     
     RETURN_TYPES = (CustomIO.MOTORWAY,IO.FLOAT)
@@ -57,7 +57,7 @@ class MotorwayStr:
     @classmethod
     def INPUT_TYPES(cls):
         return {"required": {"STRING":(IO.STRING,{"default":""})},
-                "optional": {"MOTORWAY":(CustomIO.MOTORWAY,{"tooltip":"Optional Input. If not connected will act as a \"Motorway Start\" node"}),
+                "optional": {CustomIO.MOTORWAY.value:(CustomIO.MOTORWAY,{"tooltip":"Optional Input. If not connected will act as a \"Motorway Start\" node"}),
                              "key":(IO.STRING,{"default":"string"})}}
     
     RETURN_TYPES = (CustomIO.MOTORWAY,IO.STRING)
@@ -74,7 +74,7 @@ class MotorwayStrMulti:
     @classmethod
     def INPUT_TYPES(cls):
         return {"required": {"STRING":(IO.STRING,{"default":"","multiline":True})},
-                "optional": {"MOTORWAY":(CustomIO.MOTORWAY,{"tooltip":"Optional Input. If not connected will act as a \"Motorway Start\" node"}),
+                "optional": {CustomIO.MOTORWAY.value:(CustomIO.MOTORWAY,{"tooltip":"Optional Input. If not connected will act as a \"Motorway Start\" node"}),
                              "key":(IO.STRING,{"default":"string"})}}
     
     RETURN_TYPES = (CustomIO.MOTORWAY,IO.STRING)

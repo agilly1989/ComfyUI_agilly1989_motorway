@@ -2,7 +2,7 @@ from enum import Enum
 import hashlib
 
 class CustomIO(str,Enum):
-    MOTORWAY = "MOTORWAY"
+    MOTORWAY = "MOTORWAY 🚌💨"
 
     def __str__(self) -> str:
         return self.value
@@ -30,3 +30,5 @@ class MotorwayClass:
 
     def get(self,varName:str):
         return getattr(self,self.varNameToHash(varName))
+    
+CustomIO.MOTORWAY.value

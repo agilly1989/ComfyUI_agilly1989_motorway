@@ -4,6 +4,18 @@ CURRENTLY IN ACTIVE DEVELOPMENT (BETA)! IF THINGS BREAK ITS BECAUSE I BROKE IT.
 
 This my implemenation of a "pipe" in ComfyUI. Is it better or worse than others? No idea.
 
+
+# Big Update (2-Feb-25) - 1.1.0
+
+* Added procedually generated Motorway Nodes
+  * "Motorway-ed" Nodes can be found in the menu and ""most"" should work. Ones that wont work will be
+    * Those who have custom JS
+    * Output Nodes
+* Changed the name for the Motorway to be more .... fun
+* Tweaked some stuff
+
+NOTE: Your flows might break, Sorry, I haven't "Finished" this project so please be paitent with me
+
 # Installation
 Open your `ComfyUI/custom_nodes` folder and git clone this repository
 
@@ -40,13 +52,13 @@ If you go looking in `ramps/generated.py` you will see `MAX_IN` and `MAX_OUT`.. 
 
 # Feature Creep
 * [ ] Move configuration values to a config file (`yaml`, `toml`, `ini`, `xml`, something)
-* [ ] Motorway Merge (will probably be a "update A with B" thing because of `dicts`)
-* [ ] Make it so it loads last and makes a clone of existing nodes so you don't need to add "Motorway" nodes
+* [ ] Motorway Merge (will probably be a "update A with B" thing)
+* [x] Make it so it loads last and makes a clone of existing nodes so you don't need to add "Motorway" nodes
   * Will probably need patching of the node loading system to ensure that this loads last in the sequence, mega jank but will do the job
 
 # Things I need to do
 * [ ] Tidy up
-* [ ] Rename stuff maybe?
+* [x] Rename stuff maybe?
 * [ ] Properly name nodes (haven't gotten around to it yet)
 
 # Errors

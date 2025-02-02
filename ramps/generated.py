@@ -16,14 +16,14 @@ def get_char(idx):
 def generate_outputs(count):
     return (
         (CustomIO.MOTORWAY,) + (IO.ANY,) * count,
-        (CustomIO.MOTORWAY.name,) + tuple(f"{IO.ANY.name} ({get_char(x)})" for x in range(count))
+        (CustomIO.MOTORWAY,) + tuple(f"{IO.ANY.name} ({get_char(x)})" for x in range(count))
     )
 
 # Generate input types
 def generate_inputs(in_count, out_count):
     max_count = max(in_count, out_count)
     return classmethod(lambda cls: {
-        "required": {"MOTORWAY": (CustomIO.MOTORWAY,)},
+        "required": {CustomIO.MOTORWAY.value: (CustomIO.MOTORWAY,)},
         "optional": {
             **{f"{IO.ANY.name}_({get_char(x)})": (IO.ANY,) for x in range(in_count)},
             **{f"{IO.ANY.name}_({get_char(x)})_key": (IO.STRING,) for x in range(max_count)}
@@ -31,7 +31,8 @@ def generate_inputs(in_count, out_count):
     })
 
 # Function logic for processing nodes
-def node_function(self, MOTORWAY: MotorwayClass, **kwargs):
+def node_function(self, **kwargs):
+    MOTORWAY:MotorwayClass = kwargs.pop(CustomIO.MOTORWAY)
     node_connections = [key for key in kwargs if "key" not in key]
     connection_keys = [key for key in kwargs if "key" in key]
 
