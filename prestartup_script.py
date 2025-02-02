@@ -12,8 +12,7 @@ def patched_init_external_custom_nodes():
         original_list = sorted(original_listdir(path))  # Sort all modules first
         if "Comfyui_agilly_motorway" in original_list:
             # Move "Comfyui_agilly_motorway" to the end of the list
-            original_list.append(original_list.pop(original_list.index("Comfyui_agilly_motorway")))
-        print(original_list)  # Debugging: print the final sorted order
+            original_list.append(original_list.pop(original_list.index("ComfyUI_agilly1989_motorway")))
         return original_list  
 
     with unittestPatch("os.listdir", new=sorted_listdir):

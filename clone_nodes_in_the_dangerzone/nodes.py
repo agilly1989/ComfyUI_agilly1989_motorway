@@ -4,8 +4,6 @@ from comfy.comfy_types import ComfyNodeABC, IO, InputTypeDict
 from comfy_execution.graph_utils import GraphBuilder
 from ..custom_types import CustomIO, MotorwayClass
 
-Path(Path(__file__).parent, "nodes.txt").write_text("\n".join(nodes.NODE_CLASS_MAPPINGS.keys()))
-
 def nodeOutputs(node: ComfyNodeABC):
     RETURN_TYPES = []
     RETURN_NAMES = []
