@@ -43,6 +43,8 @@ def node_function(self, **kwargs):
             #MOTORWAY[key_value] = kwargs.get(connection)
             MOTORWAY.update(key_value,kwargs.get(connection))
 
+    MOTORWAY = MOTORWAY.clone()
+    
     # Process outputs
     outputs = [MOTORWAY]
     for connection_key in connection_keys:

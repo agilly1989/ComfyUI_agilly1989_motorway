@@ -101,7 +101,7 @@ class BaseClass(ComfyNodeABC):
         for widgetName,widgetKey in nodeOutputsKwargs.items():
             MOTORWAY.update(widgetKey,outData[position])
             position += 1
-
+        MOTORWAY = MOTORWAY.clone()
         return (MOTORWAY,)
 
 # Dictionary to store dynamically created classes

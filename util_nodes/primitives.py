@@ -20,6 +20,7 @@ class MotorwaySeed:
         if MOTORWAY == None:
             MOTORWAY = MotorwayClass()
         MOTORWAY.update(key,seed)
+        MOTORWAY =  MOTORWAY.clone()
 
         return (MOTORWAY,seed)
 
@@ -42,6 +43,7 @@ class MotorwayInt:
         if MOTORWAY == None:
             MOTORWAY = MotorwayClass()
         MOTORWAY.update(key,INT)
+        MOTORWAY = MOTORWAY.clone()
         return (MOTORWAY,INT)
 
 class MotorwayFloat:
@@ -63,6 +65,7 @@ class MotorwayFloat:
         if MOTORWAY == None:
             MOTORWAY = MotorwayClass()
         MOTORWAY.update(key,FLOAT)
+        MOTORWAY = MOTORWAY.clone()
         return (MOTORWAY,FLOAT)
 
 class MotorwayStr:
@@ -84,6 +87,7 @@ class MotorwayStr:
         if MOTORWAY == None:
             MOTORWAY = MotorwayClass()
         MOTORWAY.update(key,STRING)
+        MOTORWAY = MOTORWAY.clone()
         return (MOTORWAY,STRING)
 
 class MotorwayStrMulti:
@@ -105,6 +109,7 @@ class MotorwayStrMulti:
         if MOTORWAY == None:
             MOTORWAY = MotorwayClass()
         MOTORWAY.update(key,STRING)
+        MOTORWAY = MOTORWAY.clone()
         return (MOTORWAY,STRING)
 
 NODE_CLASS_MAPPINGS = {"MotorwaySeed":MotorwaySeed,

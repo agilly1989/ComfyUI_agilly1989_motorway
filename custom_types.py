@@ -1,3 +1,4 @@
+from __future__ import annotations
 from enum import Enum
 import hashlib
 
@@ -28,7 +29,23 @@ class MotorwayClass:
     def update(self,varName:str,varData):
         setattr(self,self.varNameToHash(varName),varData)
 
-    def get(self,varName:str):
-        return getattr(self,self.varNameToHash(varName))
+    def get(self, varName: str):
+        try:
+            return getattr(self, self.varNameToHash(varName))
+        except AttributeError:
+            raise KeyError(f"Key: `{varName}` doesn't exist in motorway")
+
+    def asDict(self):
+        return {
+            key: value
+            for key, value in self.__dict__.items()
+            if key.startswith("hash_")
+        }
+
+    def clone(self):
+        new_instance = MotorwayClass()
+        for key, value in self.asDict().items():
+            setattr(new_instance, key, value)  # Copy only `hash_` attributes
+        return new_instance
     
 CustomIO.MOTORWAY.value
