@@ -113,7 +113,7 @@ for nodeName, nodeClass in nodes.NODE_CLASS_MAPPINGS.items():
         newNodeName,
         (BaseClass,),
         {
-            "CATEGORY": f"{BaseClass.CATEGORY}/{nodeClass.CATEGORY}",
+            "CATEGORY": f"{BaseClass.CATEGORY}/{nodeClass.CATEGORY}" if hasattr("CATEGORY",nodeClass) else f"{BaseClass.CATEGORY}",
             "CLONED_NODE": (nodeName, nodeClass),  # Fixed the lambda
         }
     )
